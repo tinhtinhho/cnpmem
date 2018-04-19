@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <link href="~/Content/main.css" rel="stylesheet" />
+   
+    <script src="~/Scripts/prototype.js"></script>
+    <script src="~/Scripts/showdetail.js"></script>
+    <script src="~/Scripts/tabs.js"></script>
+    <script src="~/Scripts/tooltip.js"></script>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    <div id="main">
+        <!-- Header -->
+        <div id="header">
+            <h1 id="logo"><a href="http://all-free-download.com/free-website-templates/"><img src="~/design/logo.gif" alt="" /></a></h1>
+            <hr class="noscreen" />
+            <!-- Date -->
+            <div class="date date-24">
+                <p class="nom">
+                    Today is <strong>Monday, March 24th 2009</strong><br />
+                    <span class="nonhigh"><a href="http://all-free-download.com/free-website-templates/">Make Catalogio your homepage</a></span>
+                </p>
+            </div>
+            <!-- /date -->
+            <hr class="noscreen" />
+        </div>
+        <!-- /header -->
+        <!-- Tabs -->
+        <div id="search-tabs" class="box">
+            <ul id="search-type">
+                <li><a href="#s01"><span>Kho hàng</span></a></li>
+                <li><a href="#s02"><span>Địa điểm kho</span></a></li>
+                <li><a href="#s03"><span>Loại hàng</span></a></li>
+                <li><a href="#s04"><span>Nhập hàng</span></a></li>
+                <li><a href="#s05"><span>Xuất hàng</span></a></li>
+            </ul>
+        </div>
+        <!-- /search-tabs -->
+        <!-- Search -->
+        <div id="search-top"></div>
+        <div id="search">
+            <div id="search-in">
+                <div id="s01">
+                    <form action="http://all-free-download.com/free-website-templates/" method="get">
+                        <p class="nom t-center">
+                            <label for="search-input01">Kho:</label>
+                            <input type="text" size="75" name="" id="search-input01" />
+                            <input type="image" value="Search" src="~/design/search-button.gif" class="search-submit" />
+                        </p>
+                    </form>
+                </div>
+                <div id="s02">
+                    <form action="http://all-free-download.com/free-website-templates/" method="get">
+                        <p class="nom t-center">
+                            <label for="search-input02">Địa điểm:</label>
+                            <input type="text" size="75" name="" id="search-input02" />
+                            <input type="image" value="Search" src="~/design/search-button.gif" class="search-submit" />
+                        </p>
+                    </form>
+                </div>
+                <div id="s03">
+                    <form action="http://all-free-download.com/free-website-templates/" method="get">
+                        <p class="nom t-center">
+                            <label for="search-input03">Loại hàng:</label>
+                            <input type="text" size="75" name="" id="search-input03" />
+                            <input type="image" value="Search" src="~/design/search-button.gif" class="search-submit" />
+                        </p>
+                    </form>
+                </div>
+                <div id="s04">
+                    <form action="http://all-free-download.com/free-website-templates/" method="get">
+                        <p class="nom t-center">
+                            <label for="search-input04"Nhập hàng:</label>
+                            <input type="text" size="75" name="" id="search-input04" />
+                            <input type="image" value="Search" src="~/design/search-button.gif" class="search-submit" />
+                        </p>
+                    </form>
+                </div>
+                <div id="s05">
+                    <form action="http://all-free-download.com/free-website-templates/" method="get">
+                        <p class="nom t-center">
+                            <label for="search-input05">Xuất hàng:</label>
+                            <input type="text" size="75" name="" id="search-input05" />
+                            <input type="image" value="Search" src="~/design/search-button.gif" class="search-submit" />
+                        </p>
+                    </form>
+                </div>
+                <hr class="noscreen" />
+            </div>
+            <!-- /search-in -->
+        </div>
+        <!-- /search -->
+        <div id="search-bottom"></div>
+        <script type="text/javascript">
+            new Control.Tabs('search-type');
+        </script>
+        <!-- Content -->
+        <div id="page" class="box">
+            <!-- Catalog -->
+            <div class="box">
+                <div id="col-l">
+                    <div class="title01-top"></div>
+                    <div class="title01">
+                        <div class="title01-in">
+                            <p class="f-right noprint"><strong><a href="http://all-free-download.com/free-website-templates/" class="add">Phân loại</a></strong></p>
+                            <h2 class="ico-list">Loại hàng</h2>
+                        </div>
+                    </div>
+                    <div class="title01-bottom"></div>
+                    @*<div class="box">
+                        <dl class="cat">
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                        </dl>
+                        <dl class="cat f-right">
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                            <dt><a href="http://all-free-download.com/free-website-templates/">Some Category</a></dt>
+                            <dd><a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a>, <a href="http://all-free-download.com/free-website-templates/">Category</a></dd>
+                        </dl>
+                    </div>*@
+                    <!-- /box -->
+                    <hr class="noscreen" />
+                </div>
+                <!-- /col-l -->
+                <!-- Sidebar -->
+                <div id="col-r" class="noprint">
+                    <!-- Login -->
+                    <div id="signup">
+                        <h3>Đăng nhập</h3>
+                        <div class="in">
+                            <form action="http://all-free-download.com/free-website-templates/" method="get">
+                                <table class="nom">
+                                    <tr>
+                                        <td><label for="inp-user">Username:</label></td>
+                                        <td colspan="2"><input type="text" size="30" style="width:190px;" name="" id="inp-user" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="inp-pass">Password:</label></td>
+                                        <td colspan="2"><input type="text" size="30" style="width:190px;" name="" id="inp-pass" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td class="smaller">
+                                            <input type="checkbox" name="" id="inp-remember" />
+                                            <label for="inp-remember" title="Remember me for 14 days" class="help">Remember</label>
+                                        </td>
+                                        <td class="t-right"><input type="image" value="Login" @*src="design/signup-bottom.gif"/*@></td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                        <!-- /in -->
+                        <div class="in02">
+                            <ul class="nom">
+                                <li class="ico-reg"><strong><a href="http://all-free-download.com/free-website-templates/">Registration</a></strong></li>
+                                <li class="ico-send"><a href="http://all-free-download.com/free-website-templates/">Forgot your password?</a></li>
+                            </ul>
+                        </div>
+                        <!-- /in02 -->
+                    </div>
+                    </div>
+                </div>
+</body>
+</html>

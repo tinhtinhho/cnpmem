@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKho" Class="DbQLKhoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-O4H4O36\SQLEXPRESS;Initial Catalog=QLKho;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLKhoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CTPhieuNhap" Member="CTPhieuNhaps">
+    <Type Name="CTPhieuNhap">
+      <Column Name="SOPN" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaMH" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenMH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiHang" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DonGia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LoaiHang_CTPhieuNhap" Member="LoaiHang1" ThisKey="LoaiHang" OtherKey="MSLH" Type="LoaiHang" IsForeignKey="true" />
+      <Association Name="PhieuNhap_CTPhieuNhap" Member="PhieuNhap" ThisKey="SOPN" OtherKey="SOPN" Type="PhieuNhap" IsForeignKey="true" />
+      <Association Name="MatHang_CTPhieuNhap" Member="MatHang" ThisKey="MaMH" OtherKey="MaMH" Type="MatHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTPhieuXuat" Member="CTPhieuXuats">
+    <Type Name="CTPhieuXuat">
+      <Column Name="SOPX" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaMH" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenMH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiHang" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DonGia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LoaiHang_CTPhieuXuat" Member="LoaiHang1" ThisKey="LoaiHang" OtherKey="MSLH" Type="LoaiHang" IsForeignKey="true" />
+      <Association Name="PhieuNhap_CTPhieuXuat" Member="PhieuNhap" ThisKey="SOPX" OtherKey="SOPN" Type="PhieuNhap" IsForeignKey="true" />
+      <Association Name="MatHang_CTPhieuXuat" Member="MatHang" ThisKey="MaMH" OtherKey="MaMH" Type="MatHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dangnhap" Member="Dangnhaps">
+    <Type Name="Dangnhap">
+      <Column Name="TaiKhoan" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kho" Member="Khos">
+    <Type Name="Kho">
+      <Column Name="MSKHO" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenKho" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="MDD" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaNVPhuTrach" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiHang" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Kho_PhieuNhap" Member="PhieuNhaps" ThisKey="MSKHO" OtherKey="Kho" Type="PhieuNhap" />
+      <Association Name="Kho_PhieuXuat" Member="PhieuXuats" ThisKey="MSKHO" OtherKey="Kho" Type="PhieuXuat" />
+      <Association Name="Kho_MatHang" Member="MatHangs" ThisKey="MSKHO" OtherKey="Kho" Type="MatHang" />
+      <Association Name="DiaDiem_Kho" Member="DiaDiem" ThisKey="MDD" OtherKey="MDD" Type="DiaDiem" IsForeignKey="true" />
+      <Association Name="LoaiHang_Kho" Member="LoaiHang1" ThisKey="LoaiHang" OtherKey="MSLH" Type="LoaiHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DiaDiem" Member="DiaDiems">
+    <Type Name="DiaDiem">
+      <Column Name="MDD" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuongKho" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DiaDiem_Kho" Member="Khos" ThisKey="MDD" OtherKey="MDD" Type="Kho" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiHang" Member="LoaiHangs">
+    <Type Name="LoaiHang">
+      <Column Name="MSLH" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuongMH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LoaiHang_CTPhieuNhap" Member="CTPhieuNhaps" ThisKey="MSLH" OtherKey="LoaiHang" Type="CTPhieuNhap" />
+      <Association Name="LoaiHang_CTPhieuXuat" Member="CTPhieuXuats" ThisKey="MSLH" OtherKey="LoaiHang" Type="CTPhieuXuat" />
+      <Association Name="LoaiHang_Kho" Member="Khos" ThisKey="MSLH" OtherKey="LoaiHang" Type="Kho" />
+      <Association Name="LoaiHang_MatHang" Member="MatHangs" ThisKey="MSLH" OtherKey="LoaiHang" Type="MatHang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhieuNhap" Member="PhieuNhaps">
+    <Type Name="PhieuNhap">
+      <Column Name="SOPN" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayLapPhieu" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Kho" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MSNV" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="PhieuNhap_CTPhieuNhap" Member="CTPhieuNhaps" ThisKey="SOPN" OtherKey="SOPN" Type="CTPhieuNhap" />
+      <Association Name="PhieuNhap_CTPhieuXuat" Member="CTPhieuXuats" ThisKey="SOPN" OtherKey="SOPX" Type="CTPhieuXuat" />
+      <Association Name="Kho_PhieuNhap" Member="Kho1" ThisKey="Kho" OtherKey="MSKHO" Type="Kho" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhieuXuat" Member="PhieuXuats">
+    <Type Name="PhieuXuat">
+      <Column Name="SOPX" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayLapPhieu" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Kho" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MSNV" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="Kho_PhieuXuat" Member="Kho1" ThisKey="Kho" OtherKey="MSKHO" Type="Kho" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MatHang" Member="MatHangs">
+    <Type Name="MatHang">
+      <Column Name="MaMH" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenMH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LoaiHang" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Kho" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DonGia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MatHang_CTPhieuNhap" Member="CTPhieuNhaps" ThisKey="MaMH" OtherKey="MaMH" Type="CTPhieuNhap" />
+      <Association Name="MatHang_CTPhieuXuat" Member="CTPhieuXuats" ThisKey="MaMH" OtherKey="MaMH" Type="CTPhieuXuat" />
+      <Association Name="Kho_MatHang" Member="Kho1" ThisKey="Kho" OtherKey="MSKHO" Type="Kho" IsForeignKey="true" />
+      <Association Name="LoaiHang_MatHang" Member="LoaiHang1" ThisKey="LoaiHang" OtherKey="MSLH" Type="LoaiHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
